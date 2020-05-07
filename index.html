@@ -173,10 +173,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-05-06 18:52:33 / Modified: 10:56:16" itemprop="dateCreated datePublished" datetime="2020-05-06T18:52:33+00:00">2020-05-06</time>
+              <time title="Created: 2020-05-06 18:52:33" itemprop="dateCreated datePublished" datetime="2020-05-06T18:52:33+00:00">2020-05-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-05-07 16:18:31" itemprop="dateModified" datetime="2020-05-07T16:18:31+00:00">2020-05-07</time>
+              </span>
 
           
 
@@ -189,10 +195,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="couldwatch-日志多行截断"><a href="#couldwatch-日志多行截断" class="headerlink" title="couldwatch 日志多行截断"></a>couldwatch 日志多行截断</h2><hr>
-<p>我们项目使用Dropwizard框架构建了一个API服务，服务运行在AWS的ECS上，该ECS服务关联了CloudWatch的一个LogGroup。</p>
+          <p>我们项目使用Dropwizard框架构建了一个API服务，服务运行在AWS的ECS上，该ECS服务关联了CloudWatch的一个LogGroup。</p>
 <p>最近在定位问题的时候，发现日志中存在这样的现象，当服务打印的一条日志有多行文本，那么在Loggroup里会将该条日志截断为多个LogEvent，每一行生成一个LogEvent。</p>
-<p>这样日志看起来不连续，阅读起来很不方便。通过查询CloudWatch的文档，发现AWS提供一个配置项，可以指定生成LogEvent的标记</p>
+<p><img src="./CouldWatch-%E6%97%A5%E5%BF%97%E5%A4%9A%E8%A1%8C%E6%88%AA%E6%96%AD/err_log.png" alt="日志被截断"></p>
+<p>上图中error message是一段html，属于第一行的Log，但是被分成多个LogEvent。这样日志看起来不连续，阅读起来不方便。<br>通过查询CloudWatch的文档，发现AWS提供一个配置项，可以指定生成LogEvent的分割标记</p>
 <blockquote>
 </blockquote>
 <ul>
@@ -200,9 +206,15 @@
 </ul>
 <blockquote>
 </blockquote>
-<p>可以看到在没有指定<strong>datetime_format</strong>选项的前提下，系统使用<strong>multi_line_start_pattern</strong>来决定一条日志的起始和结束行。<br><strong>multi_line_start_pattern</strong>的默认值是<code>^[^\s]</code>，意味着一条日志将包含起始行为有非空白字符的行，直到下一个包含非空白字符的行。</p>
+<p>可以看到在不指定<strong>datetime_format</strong>选项的前提下，系统使用<strong>multi_line_start_pattern</strong>来决定一条日志的起始和结束行。<br><strong>multi_line_start_pattern</strong>的默认值是<code>^[^\s]</code>，意味着一条LogEvent的起始行为以非空白字符打头的行，直到下一个以非空白字符打头的行。</p>
 <p>如果同时指定<strong>datetime_format</strong>和<strong>multi_line_start_pattern</strong>，系统将优先选择<strong>datetime_format</strong>。</p>
 <p>我们项目后面就是通过归一API服务的日志时间格式和CloudWatch日志时间格式，来达到让CloudWatch生成的LogEvent和原始日志条目相同的目的。</p>
+<ul>
+<li><p>服务中配置日志Layout<br><img src="CouldWatch-%E6%97%A5%E5%BF%97%E5%A4%9A%E8%A1%8C%E6%88%AA%E6%96%AD/service_log_config.png" alt="服务中配置日志Layout"></p>
+</li>
+<li><p>ECS的容器日志格式配置<br><img src="CouldWatch-%E6%97%A5%E5%BF%97%E5%A4%9A%E8%A1%8C%E6%88%AA%E6%96%AD/container_log_config.png" alt="ECS的容器日志格式配置"></p>
+</li>
+</ul>
 
       
     </div>
@@ -253,7 +265,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-06 10:56:16" itemprop="dateModified" datetime="2020-05-06T10:56:16+00:00">2020-05-06</time>
+                <time title="Modified: 2020-05-07 16:18:31" itemprop="dateModified" datetime="2020-05-07T16:18:31+00:00">2020-05-07</time>
               </span>
 
           
@@ -383,7 +395,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-06 10:56:16" itemprop="dateModified" datetime="2020-05-06T10:56:16+00:00">2020-05-06</time>
+                <time title="Modified: 2020-05-07 16:18:31" itemprop="dateModified" datetime="2020-05-07T16:18:31+00:00">2020-05-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
