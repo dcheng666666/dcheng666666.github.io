@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="只为怀念">
 <meta property="og:description" content="Database.Stateful是Salesforce内置的一个接口类，batchable job默认是无状态的，也就是说即使在batchable job类中定义了实例变量，这些变量在start&#x2F;excute&#x2F;finish函数执行时, 会被重新初始化，并不能保持运行过程中的状态。请看示例代码： 12345678910111213141516171819202122global class Tes">
 <meta property="article:published_time" content="2020-04-18T11:49:12.000Z">
-<meta property="article:modified_time" content="2020-05-08T16:02:57.698Z">
+<meta property="article:modified_time" content="2020-05-08T16:06:52.634Z">
 <meta property="article:author" content="Ada">
 <meta property="article:tag" content="Batchable">
 <meta name="twitter:card" content="summary">
@@ -199,7 +199,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-08 16:02:57" itemprop="dateModified" datetime="2020-05-08T16:02:57+00:00">2020-05-08</time>
+                <time title="Modified: 2020-05-08 16:06:52" itemprop="dateModified" datetime="2020-05-08T16:06:52+00:00">2020-05-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -275,7 +275,11 @@
 
           </div>
           
-    <div class="comments" id="gitalk-container"></div>
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81MDAzMC8yNjUyMQ=="></div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -449,23 +453,19 @@
 
   
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
 <script>
-NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID    : '73645406228bceb3e7de',
-      clientSecret: '696fc4ca8e81eec81de7b1d4a5c6232f90cccc83',
-      repo        : 'dcheng666666.github.io',
-      owner       : 'dcheng666666',
-      admin       : ['dcheng666666'],
-      id          : '20fedc3297a36484f045ffde3d7fa4df',
-        language: 'en | zh-CN | zh-TW',
-      distractionFreeMode: true
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
 });
 </script>
 
