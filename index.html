@@ -194,7 +194,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-08 15:49:03" itemprop="dateModified" datetime="2020-05-08T15:49:03+00:00">2020-05-08</time>
+                <time title="Modified: 2020-05-08 16:02:57" itemprop="dateModified" datetime="2020-05-08T16:02:57+00:00">2020-05-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -219,25 +219,14 @@
       
           <p>我们项目使用Dropwizard框架构建了一个API服务，服务运行在AWS的ECS上，该ECS服务关联了CloudWatch的一个LogGroup。</p>
 <p>最近在定位问题的时候，发现日志中存在这样的现象，当服务打印的一条日志有多行文本，那么在Loggroup里会将该条日志截断为多个LogEvent，每一行生成一个LogEvent。</p>
-<p><img src="/2020/05/06/CouldWatch-%E6%97%A5%E5%BF%97%E5%A4%9A%E8%A1%8C%E6%88%AA%E6%96%AD/err_log.png" alt="日志被截断"></p>
-<p>上图中error message是一段html，属于第一行的Log，但是被分成多个LogEvent。这样日志看起来不连续，阅读起来不方便。<br>通过查询CloudWatch的文档，发现AWS提供一个配置项，可以指定生成LogEvent的分割标记</p>
-<blockquote>
-</blockquote>
-<ul>
-<li><strong>multi_line_start_pattern</strong><br>Specifies the pattern for identifying the start of a log message. A log message is made of a line that matches the pattern and any following lines that don’t match the pattern. The valid values are regular expression or {datetime_format}. When using {datetime_format}, the datetime_format option should be specified. The default value is ‘^[^\s]’ so any line that begins with non-whitespace character closes the previous log message and starts a new log message.</li>
-</ul>
-<blockquote>
-</blockquote>
-<p>可以看到在不指定<strong>datetime_format</strong>选项的前提下，系统使用<strong>multi_line_start_pattern</strong>来决定一条日志的起始和结束行。<br><strong>multi_line_start_pattern</strong>的默认值是<code>^[^\s]</code>，意味着一条LogEvent的起始行为以非空白字符打头的行，直到下一个以非空白字符打头的行。</p>
-<p>如果同时指定<strong>datetime_format</strong>和<strong>multi_line_start_pattern</strong>，系统将优先选择<strong>datetime_format</strong>。</p>
-<p>我们项目后面就是通过归一API服务的日志时间格式和CloudWatch日志时间格式，来达到让CloudWatch生成的LogEvent和原始日志条目相同的目的。</p>
-<ul>
-<li><p>服务中配置日志Layout<br><img src="/2020/05/06/CouldWatch-%E6%97%A5%E5%BF%97%E5%A4%9A%E8%A1%8C%E6%88%AA%E6%96%AD/service_log_config.png" alt="服务中配置日志Layout"></p>
-</li>
-<li><p>ECS的容器日志格式配置<br><img src="/2020/05/06/CouldWatch-%E6%97%A5%E5%BF%97%E5%A4%9A%E8%A1%8C%E6%88%AA%E6%96%AD/container_log_config.png" alt="ECS的容器日志格式配置"></p>
-</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/06/CouldWatch-%E6%97%A5%E5%BF%97%E5%A4%9A%E8%A1%8C%E6%88%AA%E6%96%AD/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -287,7 +276,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-08 15:49:03" itemprop="dateModified" datetime="2020-05-08T15:49:03+00:00">2020-05-08</time>
+                <time title="Modified: 2020-05-08 16:02:57" itemprop="dateModified" datetime="2020-05-08T16:02:57+00:00">2020-05-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -439,7 +428,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-08 15:49:03" itemprop="dateModified" datetime="2020-05-08T15:49:03+00:00">2020-05-08</time>
+                <time title="Modified: 2020-05-08 16:02:57" itemprop="dateModified" datetime="2020-05-08T16:02:57+00:00">2020-05-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
