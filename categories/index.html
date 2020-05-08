@@ -20,24 +20,16 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="我们项目使用Dropwizard框架构建了一个API服务，服务运行在AWS的ECS上，该ECS服务关联了CloudWatch的一个LogGroup。 最近在定位问题的时候，发现日志中存在这样的现象，当服务打印的一条日志有多行文本，那么在Loggroup里会将该条日志截断为多个LogEvent，每一行生成一个LogEvent。  上图中error message是一段html，属于第一行的Log，但">
-<meta property="og:type" content="article">
-<meta property="og:title" content="CouldWatch 日志多行截断">
-<meta property="og:url" content="http://yoursite.com/2020/05/06/CouldWatch-%E6%97%A5%E5%BF%97%E5%A4%9A%E8%A1%8C%E6%88%AA%E6%96%AD/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://yoursite.com/categories/index.html">
 <meta property="og:site_name" content="只为怀念">
-<meta property="og:description" content="我们项目使用Dropwizard框架构建了一个API服务，服务运行在AWS的ECS上，该ECS服务关联了CloudWatch的一个LogGroup。 最近在定位问题的时候，发现日志中存在这样的现象，当服务打印的一条日志有多行文本，那么在Loggroup里会将该条日志截断为多个LogEvent，每一行生成一个LogEvent。  上图中error message是一段html，属于第一行的Log，但">
-<meta property="og:image" content="http://yoursite.com/2020/05/06/CouldWatch-%E6%97%A5%E5%BF%97%E5%A4%9A%E8%A1%8C%E6%88%AA%E6%96%AD/err_log.png">
-<meta property="og:image" content="http://yoursite.com/2020/05/06/CouldWatch-%E6%97%A5%E5%BF%97%E5%A4%9A%E8%A1%8C%E6%88%AA%E6%96%AD/service_log_config.png">
-<meta property="og:image" content="http://yoursite.com/2020/05/06/CouldWatch-%E6%97%A5%E5%BF%97%E5%A4%9A%E8%A1%8C%E6%88%AA%E6%96%AD/container_log_config.png">
-<meta property="article:published_time" content="2020-05-06T18:52:33.000Z">
-<meta property="article:modified_time" content="2020-05-08T15:32:43.748Z">
+<meta property="article:published_time" content="2020-05-08T23:28:09.000Z">
+<meta property="article:modified_time" content="2020-05-08T15:32:43.768Z">
 <meta property="article:author" content="Ada">
-<meta property="article:tag" content="CloudWatch">
-<meta property="article:tag" content="LogGroup">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/05/06/CouldWatch-%E6%97%A5%E5%BF%97%E5%A4%9A%E8%A1%8C%E6%88%AA%E6%96%AD/err_log.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/05/06/CouldWatch-%E6%97%A5%E5%BF%97%E5%A4%9A%E8%A1%8C%E6%88%AA%E6%96%AD/">
+<link rel="canonical" href="http://yoursite.com/categories/">
 
 
 <script id="page-configurations">
@@ -45,12 +37,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true,
+    isPost : false,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>CouldWatch 日志多行截断 | 只为怀念</title>
+  <title>categories | 只为怀念
+</title>
   
 
 
@@ -166,123 +159,55 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+  
+  
 
-          <div class="content post posts-expand">
+          <div class="content page posts-expand">
             
 
     
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/06/CouldWatch-%E6%97%A5%E5%BF%97%E5%A4%9A%E8%A1%8C%E6%88%AA%E6%96%AD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ada">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="只为怀念">
-    </span>
+    
+    
+    <div class="post-block" lang="zh-Hans">
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          CouldWatch 日志多行截断
-        </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+<h1 class="post-title" itemprop="name headline">categories
+</h1>
 
-              <time title="Created: 2020-05-06 18:52:33" itemprop="dateCreated datePublished" datetime="2020-05-06T18:52:33+00:00">2020-05-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-08 15:32:43" itemprop="dateModified" datetime="2020-05-08T15:32:43+00:00">2020-05-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/AWS/" itemprop="url" rel="index"><span itemprop="name">AWS</span></a>
-                </span>
-            </span>
+<div class="post-meta">
+  
 
-          
+</div>
 
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
-        <p>我们项目使用Dropwizard框架构建了一个API服务，服务运行在AWS的ECS上，该ECS服务关联了CloudWatch的一个LogGroup。</p>
-<p>最近在定位问题的时候，发现日志中存在这样的现象，当服务打印的一条日志有多行文本，那么在Loggroup里会将该条日志截断为多个LogEvent，每一行生成一个LogEvent。</p>
-<p><img src="/2020/05/06/CouldWatch-%E6%97%A5%E5%BF%97%E5%A4%9A%E8%A1%8C%E6%88%AA%E6%96%AD/err_log.png" alt="日志被截断"></p>
-<p>上图中error message是一段html，属于第一行的Log，但是被分成多个LogEvent。这样日志看起来不连续，阅读起来不方便。<br>通过查询CloudWatch的文档，发现AWS提供一个配置项，可以指定生成LogEvent的分割标记</p>
-<blockquote>
-</blockquote>
-<ul>
-<li><strong>multi_line_start_pattern</strong><br>Specifies the pattern for identifying the start of a log message. A log message is made of a line that matches the pattern and any following lines that don’t match the pattern. The valid values are regular expression or {datetime_format}. When using {datetime_format}, the datetime_format option should be specified. The default value is ‘^[^\s]’ so any line that begins with non-whitespace character closes the previous log message and starts a new log message.</li>
-</ul>
-<blockquote>
-</blockquote>
-<p>可以看到在不指定<strong>datetime_format</strong>选项的前提下，系统使用<strong>multi_line_start_pattern</strong>来决定一条日志的起始和结束行。<br><strong>multi_line_start_pattern</strong>的默认值是<code>^[^\s]</code>，意味着一条LogEvent的起始行为以非空白字符打头的行，直到下一个以非空白字符打头的行。</p>
-<p>如果同时指定<strong>datetime_format</strong>和<strong>multi_line_start_pattern</strong>，系统将优先选择<strong>datetime_format</strong>。</p>
-<p>我们项目后面就是通过归一API服务的日志时间格式和CloudWatch日志时间格式，来达到让CloudWatch生成的LogEvent和原始日志条目相同的目的。</p>
-<ul>
-<li><p>服务中配置日志Layout<br><img src="/2020/05/06/CouldWatch-%E6%97%A5%E5%BF%97%E5%A4%9A%E8%A1%8C%E6%88%AA%E6%96%AD/service_log_config.png" alt="服务中配置日志Layout"></p>
-</li>
-<li><p>ECS的容器日志格式配置<br><img src="/2020/05/06/CouldWatch-%E6%97%A5%E5%BF%97%E5%A4%9A%E8%A1%8C%E6%88%AA%E6%96%AD/container_log_config.png" alt="ECS的容器日志格式配置"></p>
-</li>
-</ul>
-
-    </div>
-
-    
-    
-    
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/CloudWatch/" rel="tag"># CloudWatch</a>
-              <a href="/tags/LogGroup/" rel="tag"># LogGroup</a>
+      
+      
+      <div class="post-body">
+          <div class="category-all-page">
+            <div class="category-all-title">
+              2 categories in total
+            </div>
+            <div class="category-all">
+              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AWS/">AWS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Salesforce/">Salesforce</a><span class="category-list-count">1</span></li></ul>
+            </div>
           </div>
-
         
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2020/04/26/VPC/" rel="prev" title="VPC">
-      <i class="fa fa-chevron-left"></i> VPC
-    </a></div>
-      <div class="post-nav-item"></div>
+      </div>
+      
+      
+      
     </div>
-      </footer>
     
-  </article>
-  
-  
-  
 
+    
+    
+    
 
 
           </div>
           
-    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -456,25 +381,6 @@
 
   
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-<script>
-NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID    : '73645406228bceb3e7de',
-      clientSecret: '696fc4ca8e81eec81de7b1d4a5c6232f90cccc83',
-      repo        : 'dcheng666666.github.io',
-      owner       : 'dcheng666666',
-      admin       : ['dcheng666666'],
-      id          : 'e25b73a634783ed2ef690e3a020098eb',
-        language: 'en | zh-CN | zh-TW',
-      distractionFreeMode: true
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
-});
-</script>
 
 </body>
 </html>
